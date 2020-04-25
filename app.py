@@ -7,6 +7,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
+# I want to turn debug, on and off here:
+
+app.config["DEBUG"] = True
+
 # use the decorator pattern to
 # link the view function to a url
 
@@ -16,7 +20,22 @@ app = Flask(__name__)
 # define the view using a function, which returns a string
 
 def hello_world():
-	return "Hello, World!"
+	return "Hello, World!?>:?>:<?<:>?"
+
+# dynamic route:
+
+@app.route("/test/<search_query>")
+def search(search_query):
+	return search_query
+
+# dynamic route with explicit status codes:
+
+@app.route("/name/<name>")
+def index(name):
+	if name.lower() == "michael":
+		return "Hello1, {}".format(name)
+	else:
+		return "Not Found", 404
 
 # start the development server using the run() method
 
