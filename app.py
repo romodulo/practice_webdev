@@ -17,7 +17,8 @@ app.config["DEBUG"] = True
 @app.route("/")
 @app.route("/hello")
 
-# define the view using a function, which returns a string
+# define the view using a function, which 
+# returns a string
 
 def hello_world():
 	return "Hello, World!?>:?>:<?<:>?"
@@ -37,7 +38,8 @@ def index(name):
 	else:
 		return "Not Found", 404
 
-# start the development server using the run() method
+# start the development server using the run() 
+# method
 
 if __name__ == "__main__":
 	app.run()
